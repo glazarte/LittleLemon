@@ -19,3 +19,12 @@ class Booking(models.Model):
 
     def __str__(self):
         return f"Booking #{self.id} - {self.name}"
+
+class MenuItem(models.Model):
+    # Your MenuItem model fields go here
+    name = models.CharField(max_length=255)
+    description = models.TextField()
+    price = models.DecimalField(max_digits=8, decimal_places=2)
+
+    def __str__(self):
+        return self.name
