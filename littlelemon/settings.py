@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-gpo-tx!)!41y73gsfr%_8apfkvu4&nyn3sofm@8=$!%7*5+en@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 
@@ -59,7 +59,7 @@ ROOT_URLCONF = 'littlelemon.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': ['restaurant/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -84,11 +84,12 @@ REST_FRAMEWORK = {
     ],
 }
 
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #add the following line
 DJOSER={"USER_ID_FIELD":"username"}
 
-
+MEDIA_URL = '/media/'
 
 
 # Database
@@ -98,8 +99,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'LittleLemon',
-        'USER': 'adminjango', #'root',  
-        'PASSWORD': 'employee@123!',       #'GustavoSQL9586!',
+        'USER': 'adminjango',   
+        'PASSWORD': 'employee@123!',
         'HOST': '127.0.0.1',
         'PORT': '3306',
         'OPTIONS': {
